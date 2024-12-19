@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&family=Red+Rose:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <style>
+      .blur-sm {
+        filter: blur(4px);
+      }
+
+      .disabled-pointer {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+    </style>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="container max-w-[768px]">
+      <div
+        class="flex min-h-dvh flex-col gap-4 bg-green-50 p-4 pb-[80px]"
+        id="dashboard"
+      >
+        <div class="flex w-full flex-col">
+          <!-- Avatar Start-->
+          <div class="mb-4 flex">
+            <a
+              href="#"
+              class="flex items-center gap-2 hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <img
+                src="https://avatar.iran.liara.run/public/4"
+                alt="avatar"
+                class="size-8"
+              />
+              <span class="text-lg font-semibold text-gray-900">Jhon Doe</span>
+            </a>
+          </div>
+          <!-- Avatar End-->
+
+          <!-- Card Balance -->
+          <div class="mb-8 flex flex-col">
+            <div
+              class="flex h-[165px] flex-col justify-between rounded-2xl bg-gradient-to-b from-brands-light-green to-emerald-400 p-5 text-white"
+            >
+              <h1 class="font-brand text-2xl font-bold uppercase">KUSAKU</h1>
+              <h2 class="peer flex items-center gap-2 text-2xl font-medium">
+                <!-- Elemen Saldo -->
+                <span id="saldo">Rp. 52.000.000,00</span>
+                <span id="bintang" class="hidden">********</span>
+                <button
+                  id="toggleButton"
+                  type="button"
+                  class="i-material-symbols-visibility rounded-full bg-gray-200 p-1 hover:bg-gray-300 focus:outline-none"
+                ></button>
+              </h2>
+            </div>
+            <!-- Button Start -->
+            <div class="mt-2 flex gap-3">
+              <!-- Button Outline Small Start-->
+              <button
+                type="button"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-brands-light-green bg-transparent p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-brands-light-green hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-transparent disabled:text-gray-400"
+                id="transfer"
+              >
+                <span
+                  class="i-material-symbols-download-rounded text-icon-sm"
+                ></span>
+                <span>Transfer</span>
+              </button>
+              <!-- Button Utline Small End -->
+
+              <!-- Button Primary Small Start-->
+              <button
+                type="button"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400"
+                id="top-up"
+              >
+                <span
+                  class="i-material-symbols-upload-rounded text-icon-sm"
+                ></span>
+                <span>Top UP</span>
+              </button>
+              <!-- Button Primary Small End-->
+            </div>
+            <!-- Button End -->
+          </div>
+          <!-- Card Balance ENd-->
+
+          <!-- Form -->
+          <div class="shadow-3xl rounded-3xl bg-white p-2.5">
+            <!-- Card Header -->
+            <div class="mb-2 flex justify-between gap-10 p-2.5">
+              <p class="font-semibold text-gray-900">Riwayat Tranksasi</p>
+              <a
+                href="#"
+                class="text-xs font-semibold text-brands-light-green hover:text-brands-light-green/70 focus:outline-none focus:ring-2 focus:ring-green-400"
+                >Lihat Lainnya</a
+              >
+            </div>
+            <!-- Card Header End -->
+
+            <!-- Card Item -->
+            <a
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <span
+                  class="i-material-symbols-download-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Ramon Altenwerth</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >16 Desember 2024</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span class="text-xs font-medium text-red-500"
+                  >Rp. 50.000,00</span
+                >
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- Card Item -->
+            <a
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <span
+                  class="i-material-symbols-download-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Ramon Altenwerth</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >16 Desember 2024</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span class="text-xs font-medium text-red-500"
+                  >Rp. 50.000,00</span
+                >
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- Card Item -->
+            <a
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <span
+                  class="i-material-symbols-download-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Ramon Altenwerth</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >16 Desember 2024</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span class="text-xs font-medium text-red-500"
+                  >Rp. 50.000,00</span
+                >
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- Card Item -->
+            <a
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <span
+                  class="i-material-symbols-download-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Ramon Altenwerth</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >16 Desember 2024</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span class="text-xs font-medium text-red-500"
+                  >Rp. 50.000,00</span
+                >
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- Card Item End -->
+          </div>
+          <!-- Form End -->
+        </div>
+
+        <!-- Navbar Start -->
+        <div
+          class="fixed bottom-0 left-0 z-10 flex w-full justify-evenly bg-white"
+        >
+          <a
+            href="#"
+            class="group flex w-full flex-col items-center p-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+          >
+            <span
+              class="i-material-symbols-home-outline-rounded inline text-icon-md group-hover:hidden"
+            ></span>
+            <span
+              class="i-material-symbols-home-rounded hidden text-icon-md group-hover:inline"
+            ></span>
+            <span class="text-xs font-semibold">Beranda</span>
+          </a>
+          <a
+            href="transaction-history.html"
+            class="group flex w-full flex-col items-center p-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+          >
+            <span
+              class="i-material-symbols-receipt-outline-rounded inline text-icon-md group-hover:hidden"
+            ></span>
+            <span
+              class="i-material-symbols-receipt-rounded hidden text-icon-md group-hover:inline"
+            ></span>
+            <span class="text-xs font-semibold">Riwayat</span>
+          </a>
+          <a
+            href="account.html"
+            class="group flex w-full flex-col items-center p-3 text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+          >
+            <span
+              class="i-material-symbols-person-outline-rounded inline text-icon-md group-hover:hidden"
+            ></span>
+            <span
+              class="i-material-symbols-person-rounded hidden text-icon-md group-hover:inline"
+            ></span>
+            <span class="text-xs font-semibold">Akun</span>
+          </a>
+        </div>
+        <!-- Navbar End -->
+      </div>
+      <!-- POP-UP TOP UP-->
+      <div class="container relative hidden" id="pop-up">
+        <div class="z-9999 absolute -top-[168px] left-0 right-0 max-w-[768px]">
+          <div
+            class="flex flex-col rounded-tl-[33px] rounded-tr-[33px] border-2 bg-white p-5 transition duration-500 ease-in-out"
+          >
+            <form action="#" method="post">
+              <div>
+                <div class="relative">
+                  <input
+                    type="number"
+                    id="nominal"
+                    placeholder="Nominal Rupiah"
+                    class="peer w-full rounded-2xl border border-gray-400 bg-white p-3 pe-12 ps-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-red-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:border-gray-300 disabled:bg-gray-100"
+                  />
+                  <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                  >
+                    <span
+                      class="i-material-symbols-save-rounded text-icon-md"
+                    ></span>
+                  </div>
+                  <div
+                    class="absolute inset-y-0 end-0 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                  ></div>
+                </div>
+                <p class="invisible ps-4 text-xs text-gray-900">
+                  This is for Hint
+                </p>
+              </div>
+              <!-- Button Primary Small Start-->
+              <button
+                type="button"
+                class="mb-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400"
+                id="top-up"
+              >
+                <span
+                  class="i-material-symbols-send-rounded text-icon-sm"
+                ></span>
+                <span>Top UP</span>
+              </button>
+            </form>
+
+            <!-- Input End -->
+          </div>
+        </div>
+        <div class="z-9999 absolute -top-[230px] right-0 max-w-[220px]">
+          <div class="flex rounded-2xl border-2 bg-white">
+            <div
+              class="my-2 flex h-5 w-[100px] items-center justify-center py-2"
+            >
+              <a href="#" class="font-normal text-brands-light-green" id="close"
+                >X Close</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ./ POP-UP TOP UP -->
+
+      <!-- TRASNFER -->
+
+      <!-- cek-rekening -->
+      <div class="container relative hidden" id="transfer-pop-up">
+        <div class="z-9999 absolute -top-[200px] left-0 right-0 max-w-[768px]">
+          <div
+            class="flex flex-col rounded-tl-[33px] rounded-tr-[33px] border-2 bg-white p-5 transition duration-500 ease-in-out"
+          >
+            <form action="#" method="post">
+              <div>
+                <div class="relative">
+                  <div class="mb-4 flex justify-between">
+                    <div>
+                      <img
+                        src="../assets/images/logo-green.svg"
+                        alt="logo-green"
+                        class="h-7"
+                      />
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        id="lihat-lainnya"
+                        class="text-xs font-semibold text-brands-light-green hover:text-brands-light-green/70 focus:outline-none focus:ring-2 focus:ring-green-400"
+                        >Lihat Lainnya</a
+                      >
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    id="id-kusaku"
+                    placeholder="Masukkan KUSAKU ID"
+                    class="peer w-full rounded-2xl border border-gray-400 bg-white p-3 pe-12 ps-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-red-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:border-gray-300 disabled:bg-gray-100"
+                  />
+                  <div
+                    class="absolute inset-y-0 end-0 mt-10 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                  >
+                    <span
+                      class="i-material-symbols-search-rounded text-icon-md"
+                    ></span>
+                  </div>
+                  <div
+                    class="absolute inset-y-0 end-0 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                  ></div>
+                </div>
+                <p class="invisible ps-4 text-xs text-gray-900">
+                  This is for Hint
+                </p>
+              </div>
+              <!-- Button Primary Small Start-->
+              <button
+                type="button"
+                class="mb-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400"
+                id="top-up"
+              >
+                <span
+                  class="i-material-symbols-search-rounded text-icon-sm"
+                ></span>
+                <span>CEK REKENING</span>
+              </button>
+            </form>
+
+            <!-- Input End -->
+          </div>
+        </div>
+        <div class="z-9999 absolute -top-[275px] right-0 max-w-[220px]">
+          <div class="flex rounded-2xl border-2 bg-white">
+            <div
+              class="my-4 flex h-5 w-[100px] items-center justify-center py-2"
+            >
+              <a
+                href="#"
+                class="font-normal text-brands-light-green"
+                id="close-transfer"
+                >X Close</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- . /cek-rekening -->
+
+      <!-- search -->
+      <div class="container relative hidden" id="search-pop-up">
+        <div class="z-9999 absolute -top-[500px] left-0 right-0 max-w-[768px]">
+          <div
+            class="flex flex-col rounded-tl-[33px] rounded-tr-[33px] border-2 bg-white p-5 transition duration-500 ease-in-out"
+          >
+            <div>
+              <div class="relative mb-3">
+                <input
+                  type="text"
+                  id="my-input-text"
+                  placeholder="Cari Tranksasi"
+                  class="peer w-full rounded-2xl border border-gray-400 bg-white p-3 pe-12 ps-6 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-red-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:border-gray-300 disabled:bg-gray-100"
+                />
+                <div
+                  class="absolute inset-y-0 start-0 flex items-center ps-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                ></div>
+                <div
+                  class="absolute inset-y-0 end-0 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                >
+                  <span class="i-material-symbols-search-rounded"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Item -->
+            <a
+              href="#"
+              onclick="kirimTransfer()"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <span
+                  class="i-material-symbols-person-outline-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Ramon Altenwerth</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >44547298</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- Card Item -->
+            <!-- Card Item -->
+            <a
+              href="#"
+              onclick="kirimTransfer()"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <span
+                  class="i-material-symbols-person-outline-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Ramon Altenwerth</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >44547298</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- Card Item -->
+            <!-- Card Item -->
+            <a
+              href="#"
+              onclick="kirimTransfer()"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <span
+                  class="i-material-symbols-person-outline-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Ramon Altenwerth</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >44547298</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- Card Item -->
+            <!-- Card Item -->
+            <a
+              onclick="kirimTransfer()"
+              href="#"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <span
+                  class="i-material-symbols-person-outline-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Ramon Altenwerth</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >44547298</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- Card Item -->
+            <!-- Card Item -->
+            <a
+              href="#"
+              onclick="kirimTransfer()"
+              class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <!-- Left -->
+              <span class="flex items-center gap-5">
+                <span
+                  class="i-material-symbols-person-outline-rounded flex-shrink-0 text-icon-lg text-brands-light-green"
+                ></span>
+                <span class="flex flex-col">
+                  <span class="line-clamp-2 text-sm font-semibold text-gray-900"
+                    >Ramon Altenwerth</span
+                  >
+                  <span class="line-clamp-1 text-xs text-gray-500"
+                    >44547298</span
+                  >
+                </span>
+              </span>
+              <!-- ./ Left -->
+
+              <!-- Right -->
+              <span class="flex flex-shrink-0 items-center gap-2">
+                <span
+                  class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                ></span>
+              </span>
+              <!-- ./ Right -->
+            </a>
+            <div class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden">
+              <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+            </div>
+            <!-- Card Item -->
+          </div>
+        </div>
+        <div class="z-9999 absolute -top-[575px] right-0 max-w-[220px]">
+          <div class="flex rounded-2xl border-2 bg-white">
+            <div
+              class="my-4 flex h-5 w-[100px] items-center justify-center py-2"
+            >
+              <a
+                href="#"
+                class="font-normal text-brands-light-green"
+                id="close-search"
+                >X Close</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="z-9999 absolute -top-[575px] left-0 max-w-[220px]">
+          <div class="flex rounded-2xl border-2 bg-white">
+            <div
+              class="my-4 flex h-5 w-[100px] items-center justify-center py-2"
+            >
+              <a
+                href="#"
+                class="font-normal text-brands-light-green"
+                id="back-search"
+              >
+                < Back</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ./ search -->
+
+      <!-- Kirim transfer -->
+      <div class="container relative hidden" id="kirim-transfer">
+        <div class="z-9999 absolute -top-[200px] left-0 right-0 max-w-[768px]">
+          <div
+            class="flex flex-col rounded-tl-[33px] rounded-tr-[33px] border-2 bg-white p-5 transition duration-500 ease-in-out"
+          >
+            <form action="#" method="post">
+              <div>
+                <div class="relative">
+                  <div class="mb-4 flex justify-between">
+                    <div class="flex gap-4">
+                      <div class="flex">
+                        <img
+                          src="../assets/images/logo-green.svg"
+                          alt="logo-green"
+                          class="h-7"
+                        />
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <h1 class="text-sm font-semibold text-gray-900">
+                          JANE DANE
+                        </h1>
+                        <span class="text-xs font-normal text-gray-400"
+                          >232849</span
+                        >
+                      </div>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        id="lihat-lainnya-kirim"
+                        class="text-xs font-semibold text-brands-light-green hover:text-brands-light-green/70 focus:outline-none focus:ring-2 focus:ring-green-400"
+                        >Lihat Lainnya</a
+                      >
+                    </div>
+                  </div>
+                  <input
+                    type="number"
+                    id="id-kirim-transfer"
+                    placeholder="Masukkan Nominal Transfer"
+                    class="peer w-full rounded-2xl border border-gray-400 bg-white p-3 pe-12 ps-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-red-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:border-gray-300 disabled:bg-gray-100"
+                  />
+                  <div
+                    class="absolute inset-y-0 end-0 mt-10 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                  >
+                    <span
+                      class="i-material-symbols-search-rounded text-icon-md"
+                    ></span>
+                  </div>
+                  <div
+                    class="absolute inset-y-0 end-0 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                  ></div>
+                </div>
+                <p class="invisible ps-4 text-xs text-gray-900">
+                  This is for Hint
+                </p>
+              </div>
+              <!-- Button Primary Small Start-->
+              <button
+                type="button"
+                class="mb-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400"
+                id="top-up"
+              >
+                <span
+                  class="i-material-symbols-send-rounded text-icon-sm"
+                ></span>
+                <span>LANJUT KIRIM</span>
+              </button>
+            </form>
+
+            <!-- Input End -->
+          </div>
+        </div>
+        <div class="z-9999 absolute -top-[275px] right-0 max-w-[220px]">
+          <div class="flex rounded-2xl border-2 bg-white">
+            <div
+              class="my-4 flex h-5 w-[100px] items-center justify-center py-2"
+            >
+              <a
+                href="#"
+                class="font-normal text-brands-light-green"
+                id="close-kirim"
+                >X Close</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="z-9999 absolute -top-[275px] left-0 max-w-[220px]">
+          <div class="flex rounded-2xl border-2 bg-white">
+            <div
+              class="my-4 flex h-5 w-[100px] items-center justify-center py-2"
+            >
+              <a
+                href="#"
+                class="font-normal text-brands-light-green"
+                id="back-kirim"
+                >< Back</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ./ Kirim transfer -->
+
+      <!-- ./ TRASNFER -->
+    </div>
+
+    <script>
+      const saldo = document.getElementById('saldo');
+      const bintang = document.getElementById('bintang');
+      const toggleButton = document.getElementById('toggleButton');
+
+      let isVisible = true;
+
+      toggleButton.addEventListener('click', () => {
+        isVisible = !isVisible; // Toggle state
+
+        if (isVisible) {
+          saldo.classList.remove('hidden');
+          bintang.classList.add('hidden');
+          toggleButton.classList.add('i-material-symbols-visibility');
+          toggleButton.classList.remove('i-material-symbols-visibility-off'); // Icon untuk terlihat
+        } else {
+          saldo.classList.add('hidden');
+          bintang.classList.remove('hidden');
+          toggleButton.classList.remove('i-material-symbols-visibility');
+          toggleButton.classList.add('i-material-symbols-visibility-off'); // Icon untuk tersembunyi
+        }
+      });
+
+      const topUp = document.querySelector('#top-up');
+      const dashboard = document.querySelector('#dashboard');
+      const popUp = document.querySelector('#pop-up');
+      const closePopUP = document.querySelector('#close');
+
+      topUp.addEventListener('click', () => {
+        dashboard.classList.add('blur-sm', 'disabled-pointer');
+        popUp.classList.remove('hidden');
+      });
+
+      closePopUP.addEventListener('click', () => {
+        dashboard.classList.remove('blur-sm', 'disabled-pointer');
+        popUp.classList.add('hidden');
+      });
+
+      const transfer = document.querySelector('#transfer');
+      const transferPopUp = document.querySelector('#transfer-pop-up');
+      const closeTransfer = document.querySelector('#close-transfer');
+
+      transfer.addEventListener('click', () => {
+        dashboard.classList.add('blur-sm', 'disabled-pointer');
+        transferPopUp.classList.remove('hidden');
+      });
+
+      const home = () => {
+        dashboard.classList.remove('blur-sm', 'disabled-pointer');
+        transferPopUp.classList.add('hidden');
+        search.classList.add('hidden');
+      };
+      const cekRekening = () => {
+        transferPopUp.classList.remove('hidden');
+        search.classList.add('hidden');
+      };
+
+      closeTransfer.addEventListener('click', home);
+
+      const lihatLainnya = document.querySelector('#lihat-lainnya');
+      const search = document.querySelector('#search-pop-up');
+
+      lihatLainnya.addEventListener('click', () => {
+        transferPopUp.classList.add('hidden');
+        search.classList.remove('hidden');
+      });
+
+      const closeSearch = document
+        .querySelector('#close-search')
+        .addEventListener('click', home);
+
+      const backSearch = document
+        .querySelector('#back-search')
+        .addEventListener('click', cekRekening);
+
+      const kirimTransferPopUp = document.querySelector('#kirim-transfer');
+      const kirimTransfer = () => {
+        kirimTransferPopUp.classList.remove('hidden');
+        search.classList.add('hidden');
+      };
+
+      const lihatLainnyaKirim = document.querySelector('#lihat-lainnya-kirim');
+      lihatLainnyaKirim.addEventListener('click', () => {
+        kirimTransferPopUp.classList.add('hidden');
+        transferPopUp.classList.add('hidden');
+        search.classList.remove('hidden');
+      });
+
+      const backKirim = document.querySelector('#back-kirim');
+      const closeKirim = document.querySelector('#close-kirim');
+
+      backKirim.addEventListener('click', () => {
+        kirimTransferPopUp.classList.add('hidden');
+        transferPopUp.classList.add('hidden');
+        search.classList.remove('hidden');
+      });
+
+      closeKirim.addEventListener('click', () => {
+        dashboard.classList.remove('blur-sm', 'disabled-pointer');
+        kirimTransferPopUp.classList.add('hidden');
+        transferPopUp.classList.add('hidden');
+        search.classList.add('hidden');
+      });
+    </script>
+  </body>
+</html>
